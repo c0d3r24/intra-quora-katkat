@@ -1,6 +1,6 @@
 // importing required module
 import React, { Component, Fragment } from 'react';
-import { BrowserRouter as Router, Route} from 'react-router-dom';
+import { BrowserRouter as Router, Route, Redirect, Switch} from 'react-router-dom';
 import firebase from 'firebase';
 
 // importing firebase configuration
@@ -16,15 +16,17 @@ class App extends Component {
         // we can fetch user data as the user is authenticated
     }
    }
-
   render() {
     return (
       <Router>
-        <Fragment>
-            <Route exact path="/" component={LoginComponent} />
-            <Route exact path="/dashboard" component={DashboardComponent} />
-        </Fragment>
-      </Router>
+              <Fragment>
+                <Switch>
+                  <Route  exact path="/" component={LoginComponent} />
+                  <Route  path="/dashboard" component={DashboardComponent} />
+                  <Redirect to="/" />
+                </Switch>
+              </Fragment>
+       </Router>
     );
   }
 }

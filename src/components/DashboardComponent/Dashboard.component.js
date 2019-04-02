@@ -1,42 +1,68 @@
 import React from 'react';
+import { Switch, Route, Link } from 'react-router-dom';
 
-import {Link} from 'react-router-dom';
 
 import ProfileComponent from './ProfileComponent/Profile.container';
 import ForumComponent from './ForumComponent/Forum.container';
 import SettingsComponent from './SettingsComponent/Settings.container';
+import HomeComponent from './HomeComponent/Home.container'
 import {LogoutComponent} from './Logout.component.js';
 import {Button, FormTextInput} from './../common';
 
+import './dashboard-custom-style.css';
 
 export const DashboardComponentContent = ({onSignOutClick}) => {
     return (
         <div className="container-fluid" >
-              <div className="row">
-                    <LogoutComponent onSignOutClick={onSignOutClick} />
-              </div>
-                <ul className="nav nav-tabs" id="myTab" role="tablist">
-                  <li className="nav-item">
-                    <a className="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Profile</a>
-                  </li>
-                  <li className="nav-item">
-                    <a className="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Forum</a>
-                  </li>
-                  <li className="nav-item">
-                    <a className="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Settings</a>
-                  </li>
-                </ul>
-                <div className="tab-content" id="myTabContent">
-                  <div className="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                    <ProfileComponent />
-                  </div>
-                  <div className="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                    <ForumComponent />
-                  </div>
-                  <div className="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
-                    <SettingsComponent />
-                  </div>
-               </div>
+
+                <div className="wrapper">
+
+                    <nav id="sidebar">
+                        <div className="sidebar-header">
+                            <h3>Intra Quora Katkat</h3>
+                        </div>
+
+                        <ul className="list-unstyled components">
+                            <p>Let's start katkat</p>
+                            <li className="active">
+                                <Link to="/dashboard">Dashboard</Link>
+                            </li>
+                            <li>
+                                <Link to="/dashboard/profile">Profile</Link>
+                            </li>
+                            <li>
+                                <Link to="/dashboard/forum">Forum</Link>
+                            </li>
+                            <li>
+                                <Link to="/dashboard/settings">Settings</ Link>
+                            </li>
+                        </ul>
+                        <div className="row">
+                            <LogoutComponent onSignOutClick={onSignOutClick} />
+                        </div>
+                    </nav>
+
+                    <div id="content">
+
+                        <nav className="navbar navbar-expand-lg navbar-light bg-light">
+                            <div className="container-fluid">
+
+                                <button type="button" id="sidebarCollapse" className="btn btn-info">
+                                    <i className="fas fa-align-left"></i>
+                                    <span>Toggle Sidebar</span>
+                                </button>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+                <div className="primary-content">
+                      <Switch>
+                        <Route path="/dashboard" exact component={HomeComponent} />
+                        <Route path="/dashboard/profile" exact component={ProfileComponent} />
+                        <Route path="/dashboard/forum" exact component={ForumComponent} />
+                        <Route path="/dashboard/settings" component={SettingsComponent} />
+                      </Switch>
+                </div>
 
         </div>
     )

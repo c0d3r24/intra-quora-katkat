@@ -4,9 +4,17 @@ import {Button, FormTextInput} from './../common';
 const styles = {
     leftSideContainer: {
         background: '#5af4ea',
+        color:"#fff",
+         display: "flex",
+         alignItems: "center",
+          justifyContent: 'center'
     },
     rightSideContainer: {
-        background:"#3b4754"
+         background:"#3b4754",
+         color:"#fff",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: 'center'
     }
 }
 
@@ -16,12 +24,13 @@ export const LoginComponentContent = ({ process_user_input,
                                        email,
                                        password}) => {
     return (
-        <div className="container-fluid" >
-            <div className="row">
+        <div className="container-fluid" style={{height: '100%'}}>
+            <div className="row" style={{height: '100%'}}>
                 <div className="col-lg-6 col-md-6" style={styles.leftSideContainer}>
-                    <h4>Plan your activities and control your progress online</h4>
+                    <h4 style={{fontSize: "50px"}}>Plan your activities and control your progress online</h4>
                 </div>
                 <div className="col-lg-6 col-md-6" style={styles.rightSideContainer}>
+                    <div>
                     <FormTextInput
                         type="text"
                         id="email"
@@ -42,6 +51,7 @@ export const LoginComponentContent = ({ process_user_input,
                         placeholder="XXXXXXXXXX"
                     />
                     <Button onClick={onSignInClick}> Sign In</Button>
+                </div>
                 </div>
             </div>
         </div>

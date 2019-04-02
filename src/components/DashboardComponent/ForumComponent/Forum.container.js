@@ -1,18 +1,20 @@
-import React, {Component} from 'react';
+import React, {Component, Fragment} from 'react';
 import { connect } from 'react-redux';
 
-class ForumComponent extends Component {
 
+
+import {ForumComponentContent} from './Forum.component';
+
+class ForumComponent extends Component {
     render() {
         return (
-           <div>
-            <h3>I am in Forum</h3>
-           </div>
+            <ForumComponentContent/>
         )
     }
 }
 
-const mapStateToProp = () => {
+const mapStateToProp = ({}) => {
+
     return {}
 }
 

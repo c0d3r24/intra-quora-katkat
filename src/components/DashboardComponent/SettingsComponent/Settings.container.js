@@ -15,7 +15,6 @@ class SettingsComponent extends Component {
 }
 
 const mapStateToProp = ({}) => {
-
     return {}
 }
 

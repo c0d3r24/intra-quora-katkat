@@ -1,12 +1,14 @@
 import React, {Component, Fragment} from 'react';
 import { connect } from 'react-redux';
-import {Route} from 'react-router-dom';
-import { sign_out_user } from './../../actions';
+import { sign_out_user, get_all_questions } from './../../actions';
 
 import {DashboardComponentContent} from './Dashboard.component';
 
 class DashboardComponent extends Component {
 
+    componentWillMount() {
+        this.props.get_all_questions();
+    }
     /**
     *  function to be called when a user press the sign-in button
     */
@@ -28,4 +30,4 @@ const mapStateToProp = () => {
 }
 
 
-export default connect (mapStateToProp, {sign_out_user})(DashboardComponent);
+export default connect (mapStateToProp, {sign_out_user, get_all_questions})(DashboardComponent);

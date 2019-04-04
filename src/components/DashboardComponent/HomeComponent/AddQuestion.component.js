@@ -18,6 +18,4 @@ export const AddQuestionComponent = ({questionText, process_user_input, save_que
             <Button onClick={save_question}>Submit Question</Button>
         </div>
     )
-}
-
-
+};

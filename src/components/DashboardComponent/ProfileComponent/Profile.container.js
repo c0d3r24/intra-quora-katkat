@@ -1,4 +1,4 @@
-import React, {Component, Fragment} from 'react';
+import React, {Component } from 'react';
 import { connect } from 'react-redux';
 
 import {save_profile_data, user_input} from './../../../actions';
@@ -18,7 +18,7 @@ class ProfileComponent extends Component {
     _saveProfileData = () => {
         const {name,phone, position} = this.props;
         this.props.save_profile_data ({name, phone, position});
-    }
+    };
     render() {
         return (
             <ProfileComponentContent
@@ -37,7 +37,7 @@ const mapStateToProp = ({profile}) => {
     return {
         name, phone, position
     }
-}
+};
 
 
 export default connect (mapStateToProp, {save_profile_data, user_input })(ProfileComponent);

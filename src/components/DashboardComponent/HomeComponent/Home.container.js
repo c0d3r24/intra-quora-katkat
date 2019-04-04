@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
-import { user_input, save_question} from './../../../actions';
+import { user_input, save_question, toggle_add_question_modal} from './../../../actions';
 
 import {HomeComponentContent} from './Home.component';
 
@@ -21,6 +21,8 @@ class HomeComponent extends Component {
                 questionList={this.props.questionList}
                 process_user_input={this._process_user_input}
                 save_question={this._onSubmitQuestionClick}
+                toggle_add_question_modal={this.props.toggle_add_question_modal}
+                showAddQuestionModal={this.props.showAddQuestionModal}
 
             />
         )
@@ -28,9 +30,9 @@ class HomeComponent extends Component {
 }
 
 const mapStateToProp = ({questions}) => {
-    const { questionText, questionList } = questions;
-    return { questionText, questionList };
+    const { questionText, questionList, showAddQuestionModal } = questions;
+    return { questionText, questionList , showAddQuestionModal};
 };
 
 
-export default connect (mapStateToProp, {user_input, save_question})(HomeComponent);
+export default connect (mapStateToProp, {user_input, save_question, toggle_add_question_modal})(HomeComponent);

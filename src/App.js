@@ -4,10 +4,11 @@ import { BrowserRouter as Router, Route, Redirect, Switch} from 'react-router-do
 import firebase from 'firebase';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faIgloo } from '@fortawesome/free-solid-svg-icons';
+import { faIgloo, faPlus } from '@fortawesome/free-solid-svg-icons';
 
 library.add(faIgloo);
 
+library.add(faPlus);
 // importing firebase configuration
 import {config} from './utils/firebase.config';
 

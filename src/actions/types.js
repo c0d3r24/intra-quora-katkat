@@ -4,3 +4,4 @@ export const LOGIN_SUCCESS = 'login_success';
 export const SAVE_SUCCESS = 'save_success';
 export const ADD_QUESTION = 'add_question';
 export const QUESTION_SAVE_SUCCESS = 'question_save_success';
+export const TOGGLE_ADD_QUESTION_MODAL = 'toggle_add_question_modal';

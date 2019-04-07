@@ -3,7 +3,6 @@ import React, { Component, Fragment } from 'react';
 import { BrowserRouter as Router, Route, Redirect, Switch} from 'react-router-dom';
 import firebase from 'firebase';
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faIgloo, faPlus } from '@fortawesome/free-solid-svg-icons';
 
 library.add(faIgloo);

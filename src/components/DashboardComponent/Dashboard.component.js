@@ -6,10 +6,14 @@ import ProfileComponent from './ProfileComponent/Profile.container';
 import ForumComponent from './ForumComponent/Forum.container';
 import SettingsComponent from './SettingsComponent/Settings.container';
 import HomeComponent from './HomeComponent/Home.container'
+import QuestionComponent from './QuestionComponent/Question.container';
 import {LogoutComponent} from './Logout.component.js';
-import {Button, FormTextInput} from './../common';
+
 
 import './dashboard-custom-style.css';
+
+
+
 
 export const DashboardComponentContent = ({onSignOutClick}) => {
     return (
@@ -31,7 +35,7 @@ export const DashboardComponentContent = ({onSignOutClick}) => {
                                 <Link to="/dashboard/profile">Profile</Link>
                             </li>
                             <li>
-                                <Link to="/dashboard/forum">Forum</Link>
+                                <Link to="/dashboard/questions">Forum</Link>
                             </li>
                             <li>
                                 <Link to="/dashboard/settings">Settings</ Link>
@@ -46,7 +50,6 @@ export const DashboardComponentContent = ({onSignOutClick}) => {
 
                         <nav className="navbar navbar-expand-lg navbar-light bg-light">
                             <div className="container-fluid">
-
                                 <button type="button" id="sidebarCollapse" className="btn btn-info">
                                     <i className="fas fa-align-left"></i>
                                     <span>Toggle Sidebar</span>
@@ -59,7 +62,8 @@ export const DashboardComponentContent = ({onSignOutClick}) => {
                       <Switch>
                         <Route path="/dashboard" exact component={HomeComponent} />
                         <Route path="/dashboard/profile" exact component={ProfileComponent} />
-                        <Route path="/dashboard/forum" exact component={ForumComponent} />
+                        <Route path="/dashboard/questions" exact component={ForumComponent} />
+                        <Route path="/dashboard/questions/:id"  component={QuestionComponent}/>
                         <Route path="/dashboard/settings" component={SettingsComponent} />
                       </Switch>
                 </div>

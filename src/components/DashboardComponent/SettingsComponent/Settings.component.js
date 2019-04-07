@@ -14,7 +14,7 @@ export const SettingsComponentContent = () => {
                                 <p style={{color:"#000", fontSize: '20px'}}>
                                     All setting will appear here
                                 </p>
-                                <table class="table table-striped">
+                                <table className="table table-striped">
                                   <thead>
                                     <tr>
                                       <th scope="col">#</th>

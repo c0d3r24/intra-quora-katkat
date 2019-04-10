@@ -10,3 +10,6 @@ export const QUESTION_RETRIEVE_SUCCESS = 'question_RETRIEVE_SUCCESS';
 export const ADD_ANSWER = 'add_answer';
 export const CLEAR_ANSWER_LIST = 'clear_answer_list';
 export const ANSWER_SAVE_SUCCESS = 'answer_save_success';
+export const ADD_MEETING = 'add_meeting';
+export const MEETING_SAVE_SUCCESS = 'meeting_save_success';
+export const CLEAR_MEETING_LIST = 'clear_meeting_list';
